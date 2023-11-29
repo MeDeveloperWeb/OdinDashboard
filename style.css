@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: max(20vw, 100px) repeat(auto-fill, minmax(max(250px, calc(80vw/3)), 1fr));
+    grid-template-rows: 20vh auto;
+    
+}
+
+.nav {
+    background-color: aquamarine;
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 3;
+    display: grid;
+    align-content: start;
+    font-size: 1.4rem;
+    gap: 3rem;
+}
+
+.nav img {
+    margin: 0 auto;
+}
+
+.nav nav {
+    display: grid;
+    gap: 3rem;
+}
+
+.nav ul {
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+}
+
+.header {
+    background-color: brown;
+    grid-column: 2 / -1;
+    text-wrap: nowrap;
+
+}
+
+.header :first-child {
+    display: flex;
+    width: 100%;
+    gap: 50px;
+    align-items: center;
+
+    box-sizing: border-box;
+    padding: 0 1rem;
+}
+
+
+.main {
+    background-color: rgb(54, 51, 255);
+    grid-column: 2 / span 2;
+}
+
+.extras {
+    background-color: rebeccapurple;
+}
