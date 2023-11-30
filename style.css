@@ -1,9 +1,26 @@
+:root {
+    --text-color: #18163d;
+    --bg-shade: #eef2ff86;
+    --faded-focus-color: #a5b4fc9d;
+    --focus-color: #4f46e5;
+    --top-margin: 1vh;
+    --side-margin: 1vw;
+}
+
+:root.dark {
+    --text-color: #e0e7ff;
+    --bg-shade: #0c0b27ad;
+    --faded-focus-color: #a5b4fc65;
+    --focus-color: #3730a3;
+}
+
+
 html {
     background: url(media/jjk.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-color: #cffafe;
+    background-color: var(--dark-bg);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -17,11 +34,10 @@ html {
 
 body {
     flex: 1;
-    margin: 1vh 1vw;
-    padding: 5vh 0;
-    background-color: #effbfc;
-    background-color: rgba(255, 255, 255, 0.5);
-    color: #1e1b4b;
+    margin: var(--top-margin) var(--side-margin);
+    padding: var(--top-margin) 0;
+    background-color: var(--bg-shade);
+    color: var(--text-color);
     box-sizing: border-box;
     border: 2px transparent;
     border-radius: 50px;
@@ -71,11 +87,17 @@ i{
             padding: 0.5rem;
             display: flex;
             gap: 2rem;
+            cursor: pointer;
     
             &.active {
-                background-color: rgba(235, 254, 255, 0.7);
+                background-color: var(--faded-focus-color);
                 border-top-right-radius: 25px;
                 border-bottom-right-radius: 25px;
+            }
+
+            & a {
+                text-decoration: none;
+                color: inherit;
             }
         }
     }
@@ -86,7 +108,7 @@ i{
     grid-column: 2 / -1;
     text-wrap: nowrap;
     font-size: 1.3rem;
-    padding-bottom: 20px;
+    padding-bottom: var(--top-margin);
     border-bottom: 2px solid;
    
     > :first-child {
@@ -97,16 +119,17 @@ i{
         justify-content: space-around;
     
         box-sizing: border-box;
-        padding: 0 1rem;
+        padding: 0 var(--side-margin);
 
         & input {
             flex: 1;
-            padding: 0 1.3rem;
+            padding: 0.16rem var(--side-margin);
             border-radius: 25px;
             height: 2.5rem;
             border: transparent;
             outline: none;
-            background-color: #a5b4fc98;
+            background-color: var(--faded-focus-color);
+            color: var(--text-color);
             font-size: 1.2rem;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
@@ -149,9 +172,9 @@ i{
         }
 
         & .techniques {
-            background-color: #4f46e5;
+            background-color: var(--focus-color);
             width: min-content;
-            padding: 0.5rem 1rem;
+            padding: var(--top-margin) var(--side-margin);
             border-radius: 25px;
             color: white;
             font-size: 1.2rem;
@@ -161,7 +184,7 @@ i{
 }
 
 .main {
-    padding: 0 2vw;
+    padding: 0 var(--side-margin);
 
     & .characters-container {
         display: grid;
@@ -172,6 +195,7 @@ i{
         & img {
             width: 100%;
             border-radius: 25px;
+            border: 4px solid var(--focus-color)
         }
 
         & > div {
@@ -185,7 +209,7 @@ i{
                 padding: 0.2rem 0.5rem;
                 margin: auto;
                 width: fit-content;
-                background-color: #4f46e5;
+                background-color: var(--focus-color);
                 color: white;
             }
         }
@@ -199,19 +223,19 @@ i{
     align-items: center;
     justify-items: stretch;
     text-align: center;
+    padding: 0 var(--side-margin);
 
     & .time {
         font-size: 10rem;
-        background-color: #c7d2fe79;
+        background-color: var(--faded-focus-color);
         border: 5px solid;
         border-radius: 25px;
     }
 
     & .date {
         font-size: 3rem;
-        background-color: #a5b4fc98;
+        background-color: var(--faded-focus-color);
         text-align: center;
-        background-color: #c7d2fe79;
         border: 5px solid;
         border-top-right-radius: 25px;
         border-top-left-radius: 25px;

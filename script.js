@@ -1,7 +1,16 @@
 const dateCont = document.querySelector('.date');
 const timeCont = document.querySelector('.time');
+const theme = document.querySelector('.toggle-theme');
+
+theme.onclick = () => {
+    const root = document.documentElement;
+    root.classList.toggle('dark');
+    theme.classList.toggle('fa-rotate-180');
+}
 
 let currDate;
+
+
 
 function getDayName(dayNumber) {
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
